@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-center">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered w-25">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Alterção de Taxa</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-alter [segment]="segment"></app-alter>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center">
+  <div class="w-50">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th hidden>Id</th>
+                <th>Segmento</th>
+                <th>Taxa</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dataItem of SegmentList">
+                <td hidden>{{dataItem.Id}}</td>
+                <td>{{dataItem.Name}}</td>
+                <td>{{dataItem.Rate}}%</td>
+                <td>
+                    <button type="button" class="btn btn-primary float-end" 
+                    data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    (click)="editClick(dataItem)"
+                    data-backdrop="static" data-keyboard="false">Editar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+</div>

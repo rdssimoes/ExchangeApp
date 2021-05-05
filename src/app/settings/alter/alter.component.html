@@ -1,0 +1,9 @@
+<div class="form-group row">
+
+    <label class="col-sm-2 col-form-label">Taxa</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="segment.Rate" placeholder="Infome a Taxa">
+    </div>
+</div>
+
+<button (click)="updateSegment()" type="button" data-bs-dismiss="modal" class="btn btn-primary">Salvar</button>
