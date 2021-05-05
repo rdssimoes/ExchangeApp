@@ -1,27 +1,24 @@
 # ExchangeApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
+O propósito desse projeto é disponibilizar o valor em reais na conversão para outra moeda na cotação do dia e com acréscimo de uma taxa que é configurada por segmento. 
 
-## Development server
+## Projeto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+No projeto é utilizado:
+ - Angular
+ - .Net Core
+ - Microsoft SQL Server
+ - Dapper ORM
+ - Docker
 
-## Code scaffolding
+O projeto esta dividio em duas parte, a primeira que é em Angular esta a interface onde é possivel consultar e editar as taxa de conversão que é a parte de adminstração da solução e tambem a parte que pega os dados de conversão e exibe o resultado que é a soma total dos custos da operação.
+A segunda parte esta a API em .Net Core que tem todo o controle de acesso a base de dados, dividida em camadas a API faz o acesso aos dados e repassa para a interface. Faz acesso a API de exchange para pegar o valor da moeda em tempo real e assim fazer o calculo.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Estrutura
 
-## Build
+E está dividido em camada:
+  - Domain
+  - Infrastructure
+  - Service
+  - UI
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
